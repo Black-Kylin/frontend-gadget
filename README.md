@@ -2,6 +2,8 @@
 
 A modern, elegant flight information display component built with HTML, CSS, and JavaScript. This project creates a visually appealing card that shows real-time flight progress between airports with a dynamic progress bar animation.
 
+<img width="811" alt="image" src="https://github.com/user-attachments/assets/7754de9d-5bf9-4e4e-9634-0522a54d3576" />
+
 ## Features
 
 - Clean, modern dark-themed UI design
