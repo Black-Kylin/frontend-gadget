@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flight Info</title>
+  <style>
+    body {
+      background: #f0f0f0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .flight-card {
+      background: #111;
+      color: #fff;
+      border-radius: 16px;
+      padding: 24px 32px;
+      width: 400px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .airports {
+      font-size: 28px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      letter-spacing: 2px;
+    }
+
+    .info {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #ccc;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .eta {
+      margin-top: 16px;
+      background: #1e1e1e;
+      padding: 12px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .eta .highlight {
+      color: #ffa500;
+      font-weight: bold;
+    }
+
+    .progress-bar {
+      margin-top: 24px;
+      height: 16px;
+      background: #333;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background: linear-gradient(90deg, #a0ff4d, #33ff99);
+      width: 0%;
+      transition: width 1s ease;
+    }
+
+    .timezone {
+      margin-top: 8px;
+      text-align: right;
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="flight-card">
+    <div class="airports">
+      <span>PVG →</span>
+      <span>LHR</span>
+    </div>
+    <div class="info">
+      <div>
+        <div>Shanghai</div>
+        <div>Mon, 8:33 PM</div>
+      </div>
+      <div>
+        <div>London</div>
+        <div>Tue, 1:33 PM</div>
+      </div>
+    </div>
+    <div class="eta">
+      <div>
+        ETA <strong>10:33 PM</strong> <br />
+        <span>London Time</span>
+      </div>
+      <div class="highlight">ARRIVES IN 02:00</div>
+    </div>
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+    <div class="timezone">-8H 00M</div>
+  </div>
+
+  <script>
+    let progress = document.getElementById("progress");
+    let width = 0;
+
+    function animateProgress() {
+      if (width >= 100) return;
+      width += 0.1;
+      progress.style.width = width + "%";
+      requestAnimationFrame(animateProgress);
+    }
+
+    animateProgress();
+  </script>
+</body>
+</html>
